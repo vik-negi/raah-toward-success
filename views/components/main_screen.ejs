@@ -1,0 +1,60 @@
+<section class="hero" id="home">
+  <div class="container">
+    <div class="hero-banner">
+      <img
+        src="images/event.jpg"
+        width="800"
+        height="864"
+        loading="lazy"
+        alt="Event image"
+        class="img-cover"
+      />
+
+      <div class="elem elem-1">
+        <p class="elem-title">Flutter</p>
+
+        <p class="elem-text"></p>
+      </div>
+
+      <div class="elem elem-2">
+        <p class="elem-title">Dart</p>
+
+        <!-- <p class="elem-text">Flutter</p> -->
+      </div>
+
+      <div class="elem elem-3">
+        <ion-icon name="trophy"></ion-icon>
+      </div>
+
+      <!-- <img
+        src="images/rotate-img.png"
+        width="169"
+        height="172"
+        alt="I'm developer from New York"
+        class="rotate-img"
+      /> -->
+    </div>
+
+    <div class="hero-content">
+      <h2 class="hero-title">
+        <!-- <span>Hello I'm</span> -->
+        <strong>Ingenious Club</strong>Present Raah toward Success
+      </h2>
+
+      <p class="hero-text">
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Perferendis
+        blanditiis unde voluptatum ab impedit.
+      </p>
+
+      <div class="btn-group">
+        <% if(locals.user){ %>
+        <a href="#" class="btn btn-primary blue">Dashboard</a>
+        <% } %> <% if(!locals.user) { %>
+        <a href="signup" class="btn btn-primary blue">Register</a>
+        <% } %>
+
+        <a href="#about" class="btn">Konw More</a>
+      </div>
+    </div>
+  </div>
+</section>

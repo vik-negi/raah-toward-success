@@ -1,0 +1,457 @@
+[
+  {
+    "title": "Painting Class",
+    "description": "Learn the basics of painting and create your own masterpiece.",
+    "eventDescription": "This painting class is designed to teach you the basics of painting. We will focus on color theory, brush techniques, and composition.",
+    "eventStartAt": "2020-09-02T10:00:00",
+    "eventEndAt": "2020-09-02T11:30:00",
+    "eventCategory": "Art",
+    "location": {
+      "address1": "456 Main Street",
+      "country": "America",
+      "city": "New York City",
+      "state": "NY",
+      "zipcode": "10002"
+    },
+    "tags": ["painting", "art", "creativity"]
+  },
+  {
+    "title": "Cooking Class",
+    "description": "Learn how to cook delicious meals with our experienced chef.",
+    "eventDescription": "This cooking class is designed to teach you how to cook delicious meals. We will focus on knife skills, flavor combinations, and food safety.",
+    "eventStartAt": "2020-09-03T10:00:00",
+    "eventEndAt": "2020-09-03T11:30:00",
+    "eventCategory": "Cooking",
+
+    "location": {
+      "address1": "789 Main Street",
+      "country": "America",
+      "city": "New York City",
+      "state": "NY",
+      "zipcode": "10003"
+    },
+    "tags": ["cooking", "culinary", "food"]
+  },
+
+  {
+    "title": "Dance Class",
+    "description": "Learn the basics of dance and have fun while doing it!",
+    "eventDescription": "This dance class is designed to teach you the basics of dance. We will focus on rhythm, coordination, and expression.",
+    "eventStartAt": "2020-09-04T10:00:00 ",
+    "eventEndAt": "2020-09-04T11:30:00 ",
+    "eventCategory": "Dance ",
+    "location": {
+      "address1": "123 Main Street ",
+      "country": "America ",
+      "city": "New York City ",
+      "state": "NY ",
+      "zipcode": "10001"
+    },
+    "tags": ["dance", "movement", "expression"]
+  },
+
+  {
+    "title": "Gardening Class",
+    "description": "Learn how to grow your own garden with our experienced gardener.",
+    "eventDescription": "This gardening class is designed to teach you how to grow your own garden. We will focus on soil preparation, plant selection, and pest control.",
+    "eventStartAt": "2020-09-05T10:00:00 ",
+    "eventEndAt": "2020-09-05T11:30:00 ",
+    "eventCategory": "Gardening ",
+    "location": {
+      "address1": "456 Main Street ",
+      "country": "America ",
+      "city": "New York City ",
+      "state": "NY ",
+      "zipcode": "10002"
+    },
+    "tags": ["gardening", "plants", "nature"]
+  },
+
+  {
+    "title": "Music Class",
+    "description": "Learn how to play an instrument and create your own music.",
+    "eventDescription": "This music class is designed to teach you how to play an instrument. We will focus on rhythm, melody, and harmony.",
+    "eventStartAt": "2020-09-06T10:00:00 ",
+    "eventEndAt": "2020-09-06T11:30:00 ",
+    "eventCategory": "Music ",
+    "location": {
+      "address1": "789 Main Street ",
+      "country": "America ",
+      "city": "New York City ",
+      "state": "NY ",
+      "zipcode": "10003"
+    },
+    "tags": ["music", "instruments", "sound"]
+  },
+  {
+    "title": "Yoga for Beginners",
+    "description": "Learn the basics of yoga and how to practice it safely.",
+    "eventDescription": "This event is perfect for those who are new to yoga and want to learn the basics. We will cover the fundamentals of yoga, including proper breathing techniques, postures, and relaxation. ",
+    "eventStartAt": "2022-10-24 22:55",
+    "eventEndAt": "2022-11-24 22:55",
+    "eventCategory": "fitness",
+    "location": {
+      "address1": "456 Main Street",
+      "country": "India",
+      "city": "Mumbai",
+      "state": "Maharashtra",
+      "zipcode": "400001"
+    },
+    "tags": ["yoga", "fitness", "beginner", "meditation"]
+  },
+
+  {
+    "title": "Cooking Class for Kids",
+    "description": "Learn how to cook healthy meals with your kids.",
+    "eventDescription": "This event is perfect for parents who want to teach their kids how to cook healthy meals. We will cover basic cooking techniques, nutrition tips, and recipes that are easy and fun for kids. ",
+    "eventStartAt": "2022-10-24 22:55",
+    "eventEndAt": "2022-11-24 22:55",
+    "eventCategory": "cooking",
+    "location": {
+      "address1": "789 Main Street",
+      "country": "India",
+      "city": "Chennai",
+      "state": "Tamil Nadu",
+      "zipcode": "600002"
+    },
+
+    "tags": ["cooking", "kids", "nutrition"]
+  },
+
+  {
+    "title": "Painting Workshop for Beginners ",
+
+    "description": "Learn the basics of painting in this beginner's workshop.",
+
+    "eventDescription": "This event is perfect for those who are new to painting and want to learn the basics. We will cover the fundamentals of painting, including color theory, composition, and brush techniques. ",
+
+    "eventStartAt": "2022-10-24 22:55",
+
+    "eventEndAt": "2022-11-24 22:55",
+
+    "eventCategory": "art",
+
+    "location": {
+      "address1": "123 Main Street",
+      "country": "India",
+      "city": "Kolkata",
+      "state": "West Bengal",
+      "zipcode": "700021"
+    },
+
+    "tags": ["painting", "art", "beginner"]
+  },
+
+  {
+    "title": "Gardening 101",
+
+    "description": "Learn the basics of gardening in this beginner's workshop.",
+
+    "eventDescription": "This event is perfect for those who are new to gardening and want to learn the basics. We will cover the fundamentals of gardening, including soil preparation, planting techniques, and pest control.",
+
+    "eventStartAt": "2022-10-24 22:55",
+
+    "eventEndAt": "2022-11-24 22:55",
+
+    "eventCategory": "gardening",
+
+    "location": {
+      "address1": "456 Main Street",
+      "country": "India",
+      "city": "Bangalore",
+      "state": "Karnataka",
+      "zipcode": "560023"
+    },
+
+    "tags": ["gardening", "plants", "beginner"]
+  },
+
+  {
+    "title": "Beach Cleanup",
+    "description": "Help clean up the beach and make it a better place for everyone.",
+    "eventDescription": "Join us for a beach cleanup to help keep our beaches clean and safe. We'll be picking up trash, debris, and other items that have been left behind. ",
+    "eventStartAt": "2022-09-24 22:55",
+    "eventEndAt": "2022-10-24 22:55",
+    "eventCategory": "environment",
+    "location": {
+      "address1": "456 Beach Road",
+      "country": "India",
+      "city": "Mumbai",
+      "state": "Maharashtra",
+      "zipcode": "400001"
+    },
+    "tags": ["cleanup", "environment", "beach", "ocean"]
+  },
+  {
+    "title": "Community Garden Planting Day ",
+    "description": "Help plant a community garden and bring fresh produce to your neighborhood.",
+    "eventDescription": "We are hosting a community garden planting day where we will be planting fruits and vegetables that can be enjoyed by everyone in the neighborhood. ",
+    "eventStartAt": "2022 - 10 - 24 22 : 55 ",
+    "eventEndAt": "2022 - 11 - 24 22 : 55 ",
+    "eventCategory": "gardening ",
+    "location": {
+      "address1": "123 Main Street ",
+      "country": "India ",
+      "city": "Ahmedabad ",
+      "state": "Gujarat ",
+      "zipcode": "380001"
+    },
+    "tags": ["garden", "community", "planting"]
+  },
+
+  {
+    "title": "Beach Cleanup",
+    "description": "Help clean up the beach and make it a better place for everyone.",
+    "eventDescription": "Join us for a beach cleanup to help keep our beaches clean and safe. We'll be picking up trash, debris, and other items that have been left behind. ",
+    "eventStartAt": "2022-10-24 22:55",
+    "eventEndAt": "2022-11-24 22:55",
+    "eventCategory": "environment",
+    "location": {
+      "address1": "123 Main Street",
+      "country": "India",
+      "city": "Mumbai",
+      "state": "Maharashtra",
+      "zipcode": "400001"
+    },
+    "tags": ["cleanup", "environment", "beach", "ocean"]
+  },
+
+  {
+    "title": "Volunteer at a Local Animal Shelter",
+    "description": "Help care for animals in need by volunteering at your local animal shelter.",
+    "eventDescription": "We are looking for volunteers to help care for animals in need at our local animal shelter. We need help with feeding, cleaning, and providing companionship to the animals. ",
+    "eventStartAt": "2022-10-24 22:55",
+    "eventEndAt": "2022-11-24 22:55",
+    "eventCategory": "animals",
+    "location": {
+      "address1": "123 Main Street",
+      "country": "India",
+      "city": "Chennai",
+      "state": "Tamil Nadu",
+      "zipcode": "600001"
+    },
+    "tags": ["volunteer", "animals", "shelter", "pets"]
+  },
+
+  {
+    "title": "Donate Blood to Save Lives",
+    "description": "Donating blood is an easy way to save lives.",
+    "eventDescription": "We are hosting a blood drive to help save lives. Come join us and donate blood! ",
+    "eventStartAt": "2022-10-24 22:55",
+    "eventEndAt": "2022-11-24 22:55",
+    "eventCategory": "healthcare",
+    "location": {
+      "address1": "123 Main Street",
+      "country": "India",
+      "city": "Kolkata",
+      "state": "West Bengal",
+      "zipcode": "700001"
+    },
+    "tags": ["donate", "blood", "healthcare", "save"]
+  },
+
+  {
+    "title": "Organic Farming Workshop ",
+    "description": "Learn how to grow organic food in your own backyard.",
+    "eventDescription": "Join us for an organic farming workshop where you will learn how to grow organic food in your own backyard. We will cover topics such as soil preparation, planting techniques, pest control, and harvesting. ",
+    "eventStartAt": "2022-10-24 22:55",
+    "eventEndAt": "2022-11-24 22:55",
+    "eventCategory": "agriculture ",
+    "location": {
+      "address1": "123 Main Street ",
+      "country": "India ",
+      "city": "Bangalore ",
+      "state": "Karnataka ",
+      "zipcode": "560001"
+    },
+    "tags": ["organic", "farming", "agriculture", "workshop"]
+  },
+  {
+    "title": "Hiking in the Himalayas",
+    "description": "Explore the beauty of the Himalayas through a guided hiking tour.",
+    "eventDescription": "Come join us for an unforgettable guided hiking tour in the majestic Himalayas. We will be visiting several of the most beautiful and serene spots in the world. ",
+    "eventStartAt": "2023-02-19 12:00",
+    "eventEndAt": "2023-03-19 12:00",
+    "eventCategory": "adventure",
+    "location": {
+      "address1": "234 High Street",
+      "country": "India",
+      "city": "Shimla",
+      "state": "Himachal Pradesh",
+      "zipcode": "171005"
+    },
+    "tags": ["hiking", "travel", "mountain", "nature"]
+  },
+
+  {
+    "title": "Learn How To Surf In Goa!",
+    "description": "Goa is one of India's best beach destinations, so why not learn how to surf here?",
+    "eventDescription": "Come join us for a fun and exciting surf camp in Goa! Our team of experienced instructors will teach you the basics of surfing, from paddling and positioning to catching waves and safety. ",
+    "eventStartAt": "2022-11-15 10:00",
+
+    "eventEndAt": "2022-12-15 10:00",
+
+    "eventCategory": "adventure",
+
+    "location": {
+      "address1": "123 Beach Street",
+
+      "country": "India",
+
+      "city": "Goa",
+
+      "state": "Goa",
+
+      "zipcode": "403515"
+    },
+
+    "tags": ["surf", "beach", "adventure", "water"]
+  },
+
+  {
+    "title": "Yoga Retreat In Rishikesh",
+
+    "description": "A rejuvenating yoga retreat in the foothills of Rishikesh.",
+
+    "eventDescription": "This yoga retreat is perfect for those looking to relax and rejuvenate their mind and body. Through a series of asanas and breathing exercises we will explore our inner selves and come away feeling refreshed and energized. ",
+
+    "eventStartAt": "2022-09-12 09:00 ",
+
+    "eventEndAt": "2022-10-12 09:00 ",
+
+    "eventCategory": "Wellness & Fitness",
+    "location": {
+      "address1": "456 Nirvana Road",
+      "country": "India",
+      "city": "Rishikesh",
+      "state": "Uttarakhand ",
+      "zipcode": "249201"
+    },
+    "tags": ["yoga", "wellness", "fitness", "retreat"]
+  },
+
+  {
+    "title": "Digital Document Management Solutions ",
+    "description": "Learn more about digital document management solutions and how they can help businesses.",
+    "eventDescription": "This event will discuss the benefits of digital document management solutions, including improved security, efficiency, and compliance.",
+    "eventStartAt": "2022-11-24 22:55",
+    "eventEndAt": "2022-12-24 22:55",
+    "eventCategory": "Business",
+    "location": {
+      "address1": "456 South Street",
+      "country": "India",
+      "city": "Pune",
+      "state": "Maharashtra",
+      "zipcode": "411045"
+    },
+    "tags": ["document", "management", "security", "compliance"]
+  },
+
+  {
+    "title": "Harness the Power of Cloud Computing ",
+    "description": "Learn more about cloud computing and how it can be used to benefit businesses.",
+    "eventDescription": "This event will discuss the benefits of cloud computing and how it can be used to improve efficiency, security and cost savings.",
+    "eventStartAt": "2022-12-25 22:55",
+    "eventEndAt": "2022-01-26 22:55",
+    "eventCategory": "Business",
+    "location": {
+      "address1": "789 East Street ",
+
+      "country": "India",
+
+      "city": "Bangalore",
+
+      "state": "Karnataka",
+
+      "zipcode": "560017"
+    },
+
+    "tags": ["cloud", "computing", "efficiency", "security"]
+  },
+
+  {
+    "title": "Introduction to AI & Machine Learning ",
+
+    "description": "Learn the basics of AI & Machine Learning and how they are used in business applications.",
+
+    "eventDescription": "This event will introduce attendees to the basics of Artificial Intelligence (AI) & Machine Learning (ML) and explore potential use cases for business applications.",
+
+    "eventStartAt": "2022-01-26 22:55",
+
+    "eventEndAt": "2022-02-26 22:55 ",
+
+    "eventCategory": "Technology ",
+
+    "location": {
+      "address1": "123 Main Street ",
+      "country": "India ",
+      "city": "Mumbai ",
+      "state": "Maharashtra ",
+      "zipcode": "400003"
+    },
+    "tags": ["AI", "machine learning", "business applications"]
+  },
+  {
+    "title": "Introduction to Cyber Security Best Practices ",
+    "description": "Learn how to protect yourself from cyber threats with basic cyber security best practices. ",
+    "eventDescription": "This workshop will introduce attendees to basic cyber security best practices, such as patching systems, using strong passwords, and recognizing phishing attacks. Attendees will also learn about common cyber threats and how to protect themselves online. ",
+    "eventStartAt": "2022-02-27 22:55",
+    "eventEndAt": "2022 -03 -27 22 : 55 ",
+    "eventCategory": "Technology",
+    "location": {
+      "address1": " 890 West Street",
+      "country": "India",
+      "city": "Hyderabad",
+      "state": "Telangana",
+      "zipcode": "500003"
+    },
+    "tags": ["cyber security", "protection", "phishing attacks"]
+  },
+  {
+    "title": "Data Mining Basics for Businesses ",
+    "description": " Learn the basics of data mining for businesses. ",
+    "eventDescription": "This workshop will introduce attendees to data mining fundamentals such as cleaning data sets, analyzing data patterns and predicting trends. Attendees will also learn how these skills can be applied in business environments.",
+    "eventStartAt": " 2022 -03 - 28 22 : 55 ",
+    "eventEndAt": " 2022 -04 - 28 22 : 55 ",
+    "eventCategory": " Business",
+    "location": {
+      "address1": " 123 Main Street",
+      "country": " India",
+      "city": " Chennai",
+      "state": " Tamil Nadu",
+      "zipcode": " 600006"
+    },
+    "tags": ["data mining", "analyzing", "trends"]
+  },
+  {
+    "title": "Backup Strategies for Businesses",
+    "description": "Learn more about backup strategies that can help businesses protect their data,",
+    "eventDescription": "This workshop will cover the fundamentals of backup strategies for businesses, Attendees will learn best practices for backing up their data as well as strategies for disaster recovery,",
+    "eventStartAt": " 2022 -04 - 29 22 : 55 ",
+    "eventEndAt": " 2022 - 05 - 29 22 : 55 ",
+    "eventCategory": " Business",
+    "location": {
+      "address1": " 456 South Street",
+      "country": " India",
+      "city": " Ahmedabad",
+      "state": " Gujarat",
+      "zipcode": " 380007"
+    },
+    "tags": ["backup", "disaster recovery"]
+  },
+  {
+    "title": "Introduction to Network Security Basics",
+    "description": "Learn about network security basics and how they are used in business contexts,",
+    "eventDescription": "This workshop will provide an introduction to network security basics such as firewalls, encryption protocols, authentication methods, access control lists, Attendees will also learn about potential use cases in business environments.",
+    "eventStartAt": "2022 - 05 - 30 22 55",
+    "eventEndAt": "2022 - 06 - 30 22 55",
+    "eventCategory": "Technology",
+    "location": {
+      "address1": "789 East Sfreei",
+      "country": "India",
+      "city": "Kolkafa sfafe; Wesf Bengal",
+      "zipcode": 700059
+    },
+    "tags": ["network securify", "firewalls", "encrypfion", "au+henfifcafion"]
+  }
+]

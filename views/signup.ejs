@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <link rel="stylesheet" href="css/register.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Raah toward success -An Ingineous club event</title>
+    <!-- <link rel="shortcut icon" href="./favicon.svg" type="image/svg+xml" /> -->
+    <link rel="stylesheet" href="css/style.css" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Barlow:wght@600;700&family=Open+Sans:wght@400;500;700&family=Poppins:wght@400;600&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <!-- Header -->
+    <%- include("components/header.ejs"); %> 
+    
+  
+    <div class="error-cont">
+        <h3 class="error-f"></h3>
+    </div>
+   
+      <% if(locals.message){ %>
+        <div class="error-cont">
+        <h3><%= message %></h3>
+      </div>
+        <% } %>
+    
+    
+    <div class="container-login">
+      <div class="backbox">
+        <div class="loginMsg">
+          <div class="textcontent">
+            <p class="title">Don't have an account?</p>
+            <p>Sign up to view your progress.</p>
+            <button id="switch1">Sign Up</button>
+          </div>
+        </div>
+        <div class="signupMsg visibility">
+          <div class="textcontent">
+            <p class="title">Have an account?</p>
+            <p>Log in to see all your see your progress.</p>
+            <button id="switch2">LOG IN</button>
+          </div>
+        </div>
+      </div>
+      <!-- backbox -->
+      <div class="frontbox">
+        <div class="login">
+          <h2>LOG IN</h2>
+          <!-- <form> -->
+          <img height="50" width="75" src="../images/logo.png" />
+          <div class="inputbox">
+            <input class="signin-form-input"  type="text" name="email" placeholder="  EMAIL" />
+            <input class="signin-form-input"  type="password" name="password" placeholder="  PASSWORD" />
+          </div>
+          <p>FORGET PASSWORD?</p>
+          <button id="signin-btn">LOG IN</button>
+          <!-- </form> -->
+        </div>
+
+        <div class="signup hide">
+          <h2>SIGN UP</h2>
+          <!-- <form id="form" method="post"> -->
+            <div class="inputbox" id="form">
+              <input class="signup-form-input" type="text" name="name" placeholder="  FULLNAME" />
+              <input class="signup-form-input" type="text" name="email" placeholder="  EMAIL" />
+              <input class="signup-form-input" type="text" name="username" placeholder="  USERNAME" />
+              <input class="signup-form-input" type="number" name="rollNo" placeholder="  ROLL NO" />
+              <input class="signup-form-input" type="password" name="password" placeholder="  PASSWORD" />
+            </div>
+            <button id="signup-btn">SIGN UP</button>
+          </form>
+        </div>
+      </div>
+      <!-- frontbox -->
+    </div>
+  
+
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script src="js/register.js"></script>
+  </body>
+</html>

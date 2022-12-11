@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Raah toward success -An Ingineous club event</title>
+
+    <!-- 
+    - favicon
+  -->
+    <link rel="shortcut icon" href="./favicon.svg" type="image/svg+xml" />
+
+    <!-- 
+    - custom css link
+  -->
+    <link rel="stylesheet" href="css/style.css" />
+
+    <!-- 
+    - google font link
+  -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Barlow:wght@600;700&family=Open+Sans:wght@400;500;700&family=Poppins:wght@400;600&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+
+  <body id="top">
+    <main>
+      <article>
+        <!-- Header -->
+        <%- include("components/header.ejs"); %>
+        <!-- HERO-->
+        <%- include("components/main_screen.ejs"); %>
+        <!-- about -->
+        <%- include('components/about.ejs'); %>
+        <!-- projects-->
+        <%- include("components/projects.ejs"); %>
+
+        <!-- 
+        - #SKILLS
+      -->
+
+        <%- include("components/skills.ejs"); %>;
+
+        <!-- 
+          - #CONTACT
+        -->
+        <%- include("components/contact.ejs"); %>;
+
+        <!-- 
+        - #BLOG
+      -->
+
+        <section class="section blog" id="blog">
+          <div class="container">
+            <p class="section-subtitle">Latest News</p>
+
+            <h2 class="h2 section-title">Checkout My Recent Blogs</h2>
+
+            <p class="section-text">
+              Dliquip ex ea commo do conse namber onequa ute irure dolor in
+              reprehen derit in voluptate
+            </p>
+
+            <ul class="blog-list">
+              <li>
+                <div class="blog-card">
+                  <figure class="card-banner">
+                    <a href="#">
+                      <img
+                        src="images/blog-1.jpg"
+                        width="1181"
+                        height="843"
+                        loading="lazy"
+                        alt="Jim Morisson Says when the musics over turn off the light"
+                        class="img-cover"
+                      />
+                    </a>
+                  </figure>
+
+                  <a href="#" class="card-tag">Web Development</a>
+
+                  <h3 class="card-title">
+                    <a href="#"
+                      >Jim Morisson Says when the musics over turn off the
+                      light</a
+                    >
+                  </h3>
+                </div>
+              </li>
+
+              <li>
+                <div class="blog-card">
+                  <figure class="card-banner">
+                    <a href="#">
+                      <img
+                        src="images/blog-2.jpg"
+                        width="1181"
+                        height="843"
+                        loading="lazy"
+                        alt="Jim Morisson Says when the musics over turn off the light"
+                        class="img-cover"
+                      />
+                    </a>
+                  </figure>
+
+                  <a href="#" class="card-tag">Web Development</a>
+
+                  <h3 class="card-title">
+                    <a href="#"
+                      >Jim Morisson Says when the musics over turn off the
+                      light</a
+                    >
+                  </h3>
+                </div>
+              </li>
+
+              <li>
+                <div class="blog-card">
+                  <figure class="card-banner">
+                    <a href="#">
+                      <img
+                        src="images/blog-3.jpg"
+                        width="1181"
+                        height="843"
+                        loading="lazy"
+                        alt="Jim Morisson Says when the musics over turn off the light"
+                        class="img-cover"
+                      />
+                    </a>
+                  </figure>
+
+                  <a href="#" class="card-tag">Web Development</a>
+
+                  <h3 class="card-title">
+                    <a href="#"
+                      >Jim Morisson Says when the musics over turn off the
+                      light</a
+                    >
+                  </h3>
+                </div>
+              </li>
+            </ul>
+          </div>
+        </section>
+      </article>
+    </main>
+
+    <!-- 
+    - #FOOTER
+  -->
+
+    <%- include("components/footer.ejs"); %>
+
+    <!-- 
+    - #BACK TO TOP
+  -->
+
+    <a href="#top" class="back-to-top" data-back-to-top>BACK TOP</a>
+
+    <!-- 
+    - custom js link
+  -->
+    <script src="js/script.js"></script>
+
+    <!-- 
+    - ionicon link
+  -->
+    <script
+      type="module"
+      src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"
+    ></script>
+    <script
+      nomodule
+      src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"
+    ></script>
+  </body>
+</html>

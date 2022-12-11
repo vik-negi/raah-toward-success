@@ -1,0 +1,35 @@
+{
+  "name": "backend",
+  "version": "1.0.0",
+  "description": "This is mini-project for college",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node index.js",
+    "dev": "nodemon index.js -e js, ejs"
+  },
+  "author": "Vikram Negi, Rohit gupta, Yashvant gupta",
+  "license": "ISC",
+  "type": "module",
+  "dependencies": {
+    "amazon-buddy": "^2.2.45",
+    "axios": "^0.27.2",
+    "bcrypt": "^5.0.1",
+    "body-parser": "^1.20.0",
+    "cloudinary": "^1.32.0",
+    "cookie": "^0.5.0",
+    "cookie-parser": "^1.4.6",
+    "cors": "^2.8.5",
+    "crypto-js": "^4.1.1",
+    "dotenv": "^16.0.2",
+    "ejs": "^3.1.8",
+    "express": "^4.18.1",
+    "jsonwebtoken": "^8.5.1",
+    "mongodb": "^4.10.0",
+    "mongoose": "^6.6.1",
+    "multer": "^1.4.5-lts.1",
+    "node-jsencrypt": "^1.0.0",
+    "nodemailer": "^6.8.0",
+    "socket.io": "^4.4.1"
+  }
+}
