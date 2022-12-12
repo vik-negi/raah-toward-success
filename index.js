@@ -48,10 +48,29 @@ let cpUpload = multerUploads.fields([{ name: "image", maxCount: 1 }]);
 app.get("/signup", (req, res) => {
   return res.render("signup");
 });
-app.get("/dashboard", (req, res) => {
-  return res.render("dashboard");
+
+app.get("/dashboard/:id", (req, res) => {
+  if(id == 1){
+    return res.render("dashboard/dashboard_profile");
+  }else if(id == 2){
+    return res.render("dashboard/dashboard_submission");
+  }else{
+    return res.render("dashboard/dashboard_resources");
+  }
 });
 
+
+app.get("/dashboard", (req, res) => {
+
+  return res.render("dashboard");
+  
+});
+
+
+
+
+
+app.use("/dashboard" , Auth.checkUserAuth);
 app.use("/user/create-post", cpUpload, PostController.createPost);
 app.use("/account", accountRoutes);
 app.use("/user", postRouter);
@@ -60,6 +79,7 @@ app.use("/api/user/chat", chatRouter);
 
 app.use("/test", testRouter);
 app.use("/", Auth.isUserAuth);
+
 app.listen(8000, "0.0.0.0", () => {
   console.log(`server is running at http://localhost:${port}`);
 });
