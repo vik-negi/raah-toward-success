@@ -94,24 +94,31 @@ class AccountController {
     if ((rollNo || email) && password) {
       try {
         if (rollNo) {
-          console.log("not bb found");
+          console.log("roll no. found");
           user = await UserModel.findOne({ rollNo: rollNo }).select(
             "+password"
           );
         } else {
           console.log("user email found");
-          user = await UserModel.findOne({ email: email }).select("+password");
+          user = await UserModel.findOne({ email: email })
+          .select("+password");
         }
         if (user) {
-          // console.log("password : ", password);
+          // console.log("password if user : ", user.password);
           const isvalidPassword = await bcrypt.compare(password, user.password);
+
+          // console.log(isvalidPassword);
           // console.log("user", user);
           if (isvalidPassword) {
             const id = user._id;
             console.log("id", id);
-            const token = jwt.sign({ _id: id }, process.env.JWT_SECRET_KEY, {
+            const token = jwt.sign({ _id: id }, process.env.
+            JWT_SECRET_KEY, {
               expiresIn: 604800,
             });
+
+            // var token = "token";
+            console.log("Jwt complete :" + token);
             res.cookie("userToken", token, {
               httpOnly: true,
               expires: new Date(Date.now() + 604800000),
@@ -123,28 +130,29 @@ class AccountController {
               data: user,
               message: "User logged in successfully",
             });
+            console.log("Singin complete");
           } else {
             console.log("not found");
-            res.status(400).render("..", {
+            res.status(400).json({
               status: "failed",
               message: "Invalid Credientials",
             });
           }
         } else {
           console.log("not found amil");
-          res.status(400).render("..", {
+          res.status(400).json({
             status: "failed",
             message: "User not found",
           });
         }
       } catch (err) {
-        res.status(400).render("account/signup", {
+        res.status(400).json({
           status: "failed",
           message: err.message,
         });
       }
     } else {
-      res.status(400).render("account/signup", {
+      res.status(400).render("signup", {
         status: "failed",
         message: "All fields are required",
       });

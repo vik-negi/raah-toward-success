@@ -10,19 +10,19 @@
         class="img-cover"
       />
 
-      <div class="elem elem-1">
+      <div class="elem elem-1 elem-animation">
         <p class="elem-title">Flutter</p>
 
-        <p class="elem-text"></p>
+        <!-- <p class="elem-text"></p> -->
       </div>
 
-      <div class="elem elem-2">
+      <div class="elem elem-2 elem-animation">
         <p class="elem-title">Dart</p>
 
         <!-- <p class="elem-text">Flutter</p> -->
       </div>
 
-      <div class="elem elem-3">
+      <div class="elem elem-3 elem-animation">
         <ion-icon name="trophy"></ion-icon>
       </div>
 
@@ -48,11 +48,10 @@
 
       <div class="btn-group">
         <% if(locals.user){ %>
-        <a href="#" class="btn btn-primary blue">Dashboard</a>
+        <a href="dashboard" class="btn btn-primary blue">Dashboard</a>
         <% } %> <% if(!locals.user) { %>
         <a href="signup" class="btn btn-primary blue">Register</a>
         <% } %>
-
         <a href="#about" class="btn">Konw More</a>
       </div>
     </div>
