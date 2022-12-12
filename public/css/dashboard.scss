@@ -19,7 +19,7 @@ $white: hsl(0, 0%, 100%);
 $transparent : hsla(0, 0%, 0%, 0);
 
 $dashboardNavigationColor : $space-cadet;
-$dashboardContentColor: $manatee;
+$dashboardContentColor: $fiery-rose;
 $dashboardFontColor : $space-cadet;
 
 .navigation{
@@ -87,6 +87,17 @@ $dashboardFontColor : $space-cadet;
         border: 2px solid;
         border-radius: 100px;
         font-size: 20px;
+    }
+}
+
+
+.askDoubt{
+    display: flex;
+    align-items: center;
+    margin: 20vh 0px 0px 1em;
+    cursor: pointer;
+    span{
+        margin: 0px 4px 0px 0px;
     }
 }
 

@@ -30,7 +30,7 @@
   margin-right: 0.4em;
 }
 .navigation .dashboardNavigation .active {
-  background-color: hsl(254deg, 7%, 65%);
+  background-color: hsl(353deg, 83%, 65%);
   margin: 0px -10px 0px 0px;
   padding-left: 1em;
   color: hsl(243deg, 23%, 18%);
@@ -43,6 +43,16 @@
   font-size: 20px;
 }
 
+.askDoubt {
+  display: flex;
+  align-items: center;
+  margin: 20vh 0px 0px 1em;
+  cursor: pointer;
+}
+.askDoubt span {
+  margin: 0px 4px 0px 0px;
+}
+
 .dashboard {
   display: flex;
 }
@@ -52,7 +62,7 @@
   margin-left: -60px;
   padding: 40px 30px 30px 130px;
   width: 100%;
-  background-color: hsl(254deg, 7%, 65%);
+  background-color: hsl(353deg, 83%, 65%);
   z-index: -1;
 }
 
