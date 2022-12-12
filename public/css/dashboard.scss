@@ -1,0 +1,117 @@
+
+
+$cadet-blue-crayola: hsl(240, 10%, 70%);
+$gold-web-golden: hsl(50, 100%, 54%);
+$vivid-sky-blue: hsl(196, 84%, 63%);
+$midnight-blue: hsl(231, 83%, 25%);
+$minion-yellow: hsl(50, 100%, 64%);
+$independence: hsl(225, 24%, 27%);
+$orange-soda: hsl(7, 96%, 61%);
+$space-cadet: hsl(243, 23%, 18%);
+$fiery-rose: hsl(353, 83%, 65%);
+$klein-blue: hsl(230, 80%, 39%);
+$bluetiful: hsl(222, 88%, 55%);
+$glaucous: hsl(230, 52%, 63%);
+$manatee: hsl(254, 7%, 65%);
+$rufous: hsl(2, 85%, 35%);
+$black: hsl(0, 0%, 0%);
+$white: hsl(0, 0%, 100%);
+$transparent : hsla(0, 0%, 0%, 0);
+
+$dashboardNavigationColor : $space-cadet;
+$dashboardContentColor: $manatee;
+$dashboardFontColor : $space-cadet;
+
+.navigation{
+    padding-top: 30px;
+    border-radius: 0px 30px 0px 0px;
+
+    height: 95vh;
+    background-color: $dashboardNavigationColor ;
+    // background-color: red;
+    width: 200px;
+
+    display: flex;
+    flex-direction: column;
+    padding-left:1em;
+
+
+    .ingeniousLogo{
+        margin-left: 1em;
+        font-size:xx-large;
+        font-weight: 900;
+    }
+
+
+
+    .dashboardNavigation{
+        margin-top: 20vh;
+
+        ul{
+            margin: 2em;
+            margin-top: 200px;
+        }
+        li{
+            a{
+                display: flex;
+                padding-top: 1em;
+                padding-bottom:1em;
+                margin-left: 1em;
+            
+                .material-icons{
+                    margin-right: 0.4em ;
+                }
+            }
+
+            
+        }
+        
+        .active{
+            background-color:$dashboardContentColor ;
+            margin: 0px -10px 0px 0px;
+            padding-left: 1em;
+            color: $dashboardNavigationColor;
+            border-radius: 30px 0px 0px 30px;
+        }
+
+       
+
+
+       
+    }
+
+}
+
+.backButton{
+    .material-icons{
+        border: 2px solid;
+        border-radius: 100px;
+        font-size: 20px;
+    }
+}
+
+.dashboard{
+
+    display: flex;
+}
+
+.dashboardContent{
+    color: $dashboardFontColor;
+    margin-left: -60px;
+    padding:  40px 30px 30px 130px ;
+    width: 100%;
+    background-color: $dashboardContentColor;
+    z-index: -1;
+}
+
+
+.dashboardProfileHeading{
+    display: flex;
+    align-items:center;
+    font-size: 30px;
+    span{
+        margin:0px 5px -2px 0px;
+        font-size: 30px;
+    }
+}
+

@@ -36,6 +36,7 @@
   --rufous: hsl(2, 85%, 35%);
   --black: hsl(0, 0%, 0%);
   --white: hsl(0, 0%, 100%);
+  --transparent : hsla(0, 0%, 0%, 0);
 
   /**
    * typography
@@ -296,6 +297,10 @@ body {
   transition: var(--transition-1);
 }
 
+.navbar-link-btn{
+  color: var(--rufous);
+}
+
 .navbar-link:is(:hover, :focus) { color: var(--orange-soda); }
 
 .navbar .btn {
@@ -314,16 +319,25 @@ body {
 .elem,
 .rotate-img { display: none; }
 
+
+
+
+
 .hero {
-  background-image: url("../images/hero-bg.jpg");
+  
+  /* background: ; */
   /* background: #e2e2e2; */
+  background: linear-gradient(to bottom , hsla(243, 23%, 18%, 0.0) , hsla(243, 23%, 18%, 0.8) ,var(--space-cadet)),  url("../images/hero-bg2.jpg");
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
+  /* background-attachment: fixed; */
   padding-block: 100px var(--section-padding);
   min-height: 100vh;
   display: grid;
   place-items: center;
+  /* background: ; */
+  /* background-blend-mode: color-burn ; */
 }
 
 .hero-banner {
@@ -892,15 +906,7 @@ textarea.contact-input {
     margin-inline-start: auto;
   }
 
-  .elem {
-    position: absolute;
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    background-color: var(--white);
-    border-radius: var(--radius-10);
-    padding: 20px;
-  }
+
 
   .elem-1 {
     top: 20px;
@@ -914,7 +920,14 @@ textarea.contact-input {
     right: -80px;
   }
 
-  .elem-2 .elem-title { color: var(--fiery-rose); }
+  .elem-2 .elem-title {
+     color: var(--fiery-rose); 
+     animation-name: floatingEffectElem2;
+    animation-duration: 3s;
+    animation-timing-function:ease-in-out;
+    animation-iteration-count: infinite;
+  
+  }
 
   .elem-title {
     font-size: 4.5rem;
@@ -931,12 +944,65 @@ textarea.contact-input {
   .elem-3 {
     top: -40px;
     right: -30px;
+    animation-name: floatingEffectElem3;
+    animation-duration: 3s;
+    animation-timing-function:ease-in-out;
+    animation-iteration-count: infinite;
   }
 
   .elem-3 ion-icon {
     color: var(--minion-yellow);
     font-size: 6rem;
   }
+
+  .elem {
+    position: absolute;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    background-color: var(--white);
+    border-radius: var(--radius-10);
+    padding: 20px;
+    animation-name: floatingEffect;
+    animation-duration: 3s;
+    animation-timing-function:ease-in-out;
+    animation-iteration-count: infinite;
+  }
+
+  @keyframes floatingEffectElem3 {
+    0% {
+        top : -40px;
+      }
+    50% {
+      
+          top : -50px;
+      }
+    100% {
+       
+          top : -40px;
+        }
+  }
+
+
+
+  @keyframes floatingEffectElem2 {
+    0% {
+        /* background-color: red; */
+        margin-bottom: 10px;
+        /* top : -40px; */
+      }
+    50% {
+          /* background-color: yellow; */
+          margin-bottom: 0px;
+          /* top : -50px; */
+      }
+    100% {
+        /* background-color: red; */
+          margin-bottom: 10px;
+          /* top : -40px; */
+        }
+  }
+  
 
   .rotate-img {
     display: block;
@@ -1078,4 +1144,9 @@ textarea.contact-input {
   .footer-list { margin-inline: 0; } */
 
 }
+
+
+
+
+
 

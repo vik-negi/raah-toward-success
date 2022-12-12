@@ -137,9 +137,9 @@
 .socials a {
   text-decoration: none;
   color: #fff;
-  border: 1.1px solid white;
+  /* border: 1.1px solid white; */
   padding: 5px 6px;
-  border-radius: 50%;
+  /* border-radius: 50%; */
 }
 
 .socials a i {
