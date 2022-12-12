@@ -638,7 +638,7 @@ textarea.contact-input {
   #FOOTER
 \*-----------------------------------*/
 
-.footer {
+/* .footer {
   background-color: var(--independence);
   padding-block: 60px;
 }
@@ -668,7 +668,19 @@ textarea.contact-input {
 
 .footer-link { transition: var(--transition-2); }
 
-.footer-link:is(:hover, :focus) { color: var(--white); }
+.footer-link:is(:hover, :focus) { color: var(--white); } */
+
+/* .footer {
+  position: fixed;
+  padding-block: 15px;
+  width: 100%;
+  background-color: var(--space-cadet);
+  height: 65px;
+  box-shadow: var(--shadow);
+  overflow: hidden;
+  transition: 0.25s var(--cubic-out);
+  z-index: 4;
+} */
 
 
 
@@ -1056,13 +1068,14 @@ textarea.contact-input {
    * FOOTER
    */
 
-  .footer .container {
+  /* .footer .container {
     display: flex;
     justify-content: space-between;
     align-items: center;
   }
 
   .copyright,
-  .footer-list { margin-inline: 0; }
+  .footer-list { margin-inline: 0; } */
 
 }
+
