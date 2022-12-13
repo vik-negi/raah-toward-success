@@ -19,13 +19,12 @@ $white: hsl(0, 0%, 100%);
 $transparent : hsla(0, 0%, 0%, 0);
 
 $dashboardNavigationColor : $space-cadet;
-$dashboardContentColor: $fiery-rose;
+$dashboardContentColor: white;
 $dashboardFontColor : $space-cadet;
 
 .navigation{
     padding-top: 30px;
     border-radius: 0px 30px 0px 0px;
-
     height: 95vh;
     background-color: $dashboardNavigationColor ;
     // background-color: red;
@@ -52,6 +51,9 @@ $dashboardFontColor : $space-cadet;
             margin-top: 200px;
         }
         li{
+            
+            cursor: pointer;
+            
             a{
                 display: flex;
                 padding-top: 1em;
