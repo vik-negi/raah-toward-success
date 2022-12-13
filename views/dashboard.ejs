@@ -42,18 +42,23 @@
           >RTS
         </div>
         <ul class="dashboardNavigation">
-          <li class="active">
+          <li id="profileButton">
             <a href="#profile"
               ><span class="material-icons">person</span> <span>Profile</span>
             </a>
           </li>
-          <li>
+          <li id="profileButton">
+            <a href="#updates"
+              ><span class="material-icons">newspaper</span> <span>Updates</span>
+            </a>
+          </li>
+          <li id="submissionButton">
             <a href="#submissions"
               ><span class="material-icons">task_alt</span>
               <span>Submissions</span>
             </a>
           </li>
-          <li>
+          <li id="resourcesButton">
             <a href="#resources">
               <span class="material-icons"
                 ><span class="material-symbols-rounded">
@@ -102,13 +107,20 @@
           <%- include("dashboard/resources.ejs");%>
           <!-- </div> -->
         </div>
+        <div class="d-c-content" id="updates">
+          <!-- <div class="dashboardContent"> -->
+          <!-- # -->
+          <!-- <h1>tghjjmkijjj</h1> -->
+          <%- include("dashboard/updates.ejs");%>
+          <!-- </div> -->
+        </div>
       </div>
     </div>
 
-    <%- include("components/footer.ejs"); %>
+    <!-- <%- include("components/footer.ejs"); %> -->
 
-    <a href="#top" class="back-to-top" data-back-to-top>BACK TOP</a>
-
+    <!-- <a href="#top" class="back-to-top" data-back-to-top>BACK TOP</a> -->
+    <script src="js/dashboard.js"></script>
     <script
       type="module"
       src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"
@@ -117,5 +129,7 @@
       nomodule
       src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"
     ></script>
+
+    
   </body>
 </html>
