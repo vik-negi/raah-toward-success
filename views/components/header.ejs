@@ -29,15 +29,16 @@
         <li>
           <a href="#contact" class="navbar-link" data-nav-link>Contact</a>
         </li>
-        
+
         <% if(!locals.user){ %>
         <li>
           <a href="../signup" class="btn btn-primary">Register</a>
         </li>
-        <% } %>
-        <% if(locals.user){ %>
+        <% } %> <% if(locals.user){ %>
         <li>
-          <a href="#" class="navbar-link navbar-link-btn">Log out</a>
+          <button id="signout-btn" class="navbar-link navbar-link-btn">
+            Log out
+          </button>
         </li>
         <% } %>
       </ul>

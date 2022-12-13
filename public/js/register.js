@@ -112,7 +112,15 @@ const userSignIn = async () => {
         },
       });
       console.log("pppppppppppppppppppppppppppp");
-      console.log(res.data);
+      console.log(res.data.data);
+      if (typeof Storage !== "undefined") {
+        // Code for localStorage/sessionStorage.
+        localStorage.setItem("user", res.data.data);
+        console.log("aaaaaaaaaaaaaaa");
+        console.log(localStorage.getItem("user"));
+      } else {
+        // Sorry! No Web Storage support..
+      }
 
       if (res.data.status === "success") {
         error.innerHTML = res.data.message;
@@ -138,5 +146,18 @@ const userSignIn = async () => {
     error.innerHTML = "";
   }, 3000);
 };
+
+const userSignOut = async () => {
+  window.localStorage.clear();
+  window.location.reload(true);
+  window.location.replace("/");
+  document.cookie.split(";").forEach(function (c) {
+    document.cookie = c
+      .replace(/^ +/, "")
+      .replace(/=.*/, "=;expires=" + new Date().toUTCString() + ";path=/");
+  });
+};
+
 document.querySelector("#signup-btn").addEventListener("click", userSignUp);
 document.querySelector("#signin-btn").addEventListener("click", userSignIn);
+document.querySelector("#signout-btn").addEventListener("click", userSignOut);
