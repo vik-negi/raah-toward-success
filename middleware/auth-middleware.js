@@ -1,5 +1,6 @@
 import jwt from "jsonwebtoken";
 import UserModel from "../models/userSchema.js";
+import { members } from "../data/members.js";
 
 class Auth {
   static checkUserAuth = async (req, res, next) => {
@@ -33,16 +34,18 @@ class Auth {
       try {
         const userId = jwt.verify(token, process.env.JWT_SECRET_KEY);
         req.user = await UserModel.findById(userId).select("-password");
-        console.log(req.user);
-        return res.render("index", { user: req.user });
+        console.log(members);
+        return res.render("index", { user: req.user, members: members });
       } catch (error) {
-        return res
-          .status(400)
-          .render("index", { status: "failed", message: "Unauthorized User" });
+        return res.status(400).render("index", {
+          status: "failed",
+          message: "Unauthorized User",
+          members: members,
+        });
       }
     }
     if (!token) {
-      return res.render("index");
+      return res.render("index", { members: members });
     }
   };
 }

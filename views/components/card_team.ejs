@@ -1,0 +1,100 @@
+<!-- <div class="member-cont">
+  <div class="members">
+    <div class="indi-member">
+      <div class="member">
+        <img src="images/hero-banner.jpg" alt="member" />
+        <div class="member-info">
+          <h3 class="member-name">Member Name</h3>
+          <p class="member-position">Member Position</p>
+        
+          <div class="member-social">
+            <a href="#"
+              ><img class="mem-soc-img" src="images/logos/facebook.png"
+            /></a>
+            <a href="#"
+              ><img class="mem-soc-img" src="images/logos/linkedin.png"
+            /></a>
+            <a href="#"
+              ><img class="mem-soc-img" src="images/logos/github.png"
+            /></a>
+            <a href="#"
+              ><img class="mem-soc-img" src="images/logos/twitter.png"
+            /></a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div> -->
+
+<div class="team-card-container">
+  <ul class="cards">
+    <% for(var j=0; j < 6; j++) { %> <% if(locals.members){ %> <% for(var i=0; i
+    < members.length; i++) { %>
+    <li class="card cards__item">
+      <div class="card__frame">
+        <div class="card__picture">
+          <img
+            src="https://image.flaticon.com/icons/svg/1496/1496034.svg"
+            alt=""
+            width="120"
+          />
+        </div>
+        <h2 class="card__title">Design</h2>
+      </div>
+      <div class="card__overlay"></div>
+      <div class="card__content">
+        <div class="container-inner">
+          <div class="card-inner">
+            <div class="pic-container">
+              <img
+                class="pic"
+                src="<%= members[i].image %>"
+                alt="Profile Picture"
+              />
+            </div>
+            <div class="name">
+              <span>Anonymous</span>
+            </div>
+            <div class="title">
+              <span><%= members[i].name %></span>
+            </div>
+            <div class="description">
+              <p>Your future is created by what you do today not tomorrow.</p>
+            </div>
+            <div class="btn btn-primary blue btn-indi-mem">
+              <a href="https://m.me/codingandstuff/">Message</a>
+            </div>
+            <div class="links">
+              <a href="<%= members[i].facebook %>" target="_blank" class="fb">
+                <img
+                  height="45px"
+                  width="45px"
+                  src="images/logos/facebook.png"
+                />
+              </a>
+              <a href="<%= members[i].twitter %>" target="_blank" class="yt">
+                <img
+                  height="35px"
+                  width="35px"
+                  src="images/logos/twitter.png"
+                />
+              </a>
+              <a href="<%= members[i].github %>" target="_blank" class="cp">
+                <img height="35px" width="35px" src="images/logos/github.png" />
+              </a>
+              <a href="<%= members[i].linkedin %>" target="_blank" class="bg">
+                <img
+                  height="35px"
+                  width="35px"
+                  src="images/logos/linkedin.png"
+                />
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </li>
+    <% }%> <% }%> <% }%>
+  </ul>
+</div>
