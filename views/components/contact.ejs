@@ -1,4 +1,4 @@
-<section class="section contact" id="contact">
+<!-- <section class="section contact" id="contact">
   <div class="container">
     <div class="contact-card">
       <p class="card-subtitle">Don't be shy</p>
@@ -79,4 +79,77 @@
       </div>
     </div>
   </div>
-</section>
+</section> -->
+
+<div class="cont-frm-main">
+  <div class="contact-form">
+    <div class="first-container">
+      <div class="info-container">
+        <div>
+          <img class="icon" />
+          <h3>Address</h3>
+          <p>Mada Center 8th floor, 379 Hudson St, New York, NY 10018 US</p>
+        </div>
+        <div>
+          <img class="icon" />
+          <h3>Lets Talk</h3>
+          <p>+1 800 1236879</p>
+        </div>
+        <div>
+          <img class="icon" />
+          <h3>General Support</h3>
+          <p>contact@example.com</p>
+        </div>
+      </div>
+    </div>
+    <div class="second-container">
+      <h2>Send Us A Message</h2>
+      <form>
+        <div class="form-group">
+          <label for="name-input">Tell us your name*</label>
+          <input
+            id="name-input"
+            type="text"
+            placeholder="Name"
+            required="required"
+          />
+        </div>
+        <div class="form-group">
+          <label for="email-input">Enter your email*</label>
+          <input
+            id="email-input"
+            type="text"
+            placeholder="Eg. example@email.com"
+            required="required"
+          />
+        </div>
+        <div class="form-group">
+          <label for="phone-input">Enter phone number*</label>
+          <input
+            id="phone-input"
+            type="text"
+            placeholder="Eg. +1 800 000000"
+            required="required"
+          />
+        </div>
+        <div class="form-group">
+          <label for="message-textarea">Message</label>
+          <textarea
+            id="message-textarea"
+            placeholder="Write us a message"
+          ></textarea>
+        </div>
+        <button class="btn btn-primary blue">Send message</button>
+      </form>
+    </div>
+  </div>
+</div>
+
+<script>
+  document.querySelector("#contact-form").addEventListener("submit", (e) => {
+    e.preventDefault();
+    e.target.elements.name.value = "";
+    e.target.elements.email.value = "";
+    e.target.elements.message.value = "";
+  });
+</script>

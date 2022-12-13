@@ -37,6 +37,17 @@
   --black: hsl(0, 0%, 0%);
   --white: hsl(0, 0%, 100%);
   --transparent : hsla(0, 0%, 0%, 0);
+  /* ew */
+  --red: hsl(0, 78%, 62%);
+  --cyan: hsl(180, 62%, 55%);
+  --orange: hsl(34, 97%, 64%);
+  --blue: hsl(212, 86%, 64%);
+  --varyDarkBlue: hsl(234, 12%, 34%);
+  --grayishBlue: hsl(229, 6%, 66%);
+  --veryLightGray: hsl(0, 0%, 98%);
+  --weight1: 200;
+  --weight2: 400;
+  --weight3: 600;
 
   /**
    * typography
@@ -512,7 +523,7 @@ body {
   #CONTACT
 \*-----------------------------------*/
 
-.contact-card {
+/* .contact-card {
   background-color: var(--midnight-blue);
   padding: 50px 25px;
   border-radius: var(--radius-20);
@@ -591,7 +602,150 @@ textarea.contact-input {
 .contact-item-link { transition: var(--transition-1); }
 
 .contact-item-link:not(address):is(:hover, :focus) { color: var(--white); }
+ */
 
+ /* @import url('https://fonts.googleapis.com/css?family=Poppins:400,500,600,700&display=swap');
+ * {
+	 padding: 0;
+	 margin: 0;
+	 box-sizing: border-box;
+	 outline: none;
+	 font-family: 'Poppins', sans-serif;
+}
+ body {
+	 background: #f2f2f2;
+} */
+.cont-frm-main{
+  display: flex;
+  justify-content: center;
+}
+ .contact-form {
+	 width: 80vw;
+	 display: flex;
+   /* justify-content: center; */
+	 justify-content: space-between;
+	 /* background: #fff; */
+	 margin: 50px 0;
+   border-radius: 20px;
+}
+ .contact-form > * {
+	 width: 50%;
+}
+ .contact-form .first-container {
+	 background: linear-gradient(45deg, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)), url("https://colorlib.com/etc/cf/ContactFrom_v17/images/bg-01.jpg") center center / cover no-repeat;
+	 display: flex;
+	 justify-content: center;
+
+   
+  border-top-left-radius: 20px;
+  border-bottom-left-radius: 20px;
+	 align-items: center;
+   margin: 30px 0;
+}
+ .contact-form .first-container .info-container div {
+	 margin: 24px 0;
+}
+ .contact-form .first-container .info-container div h3 {
+	 color: #fff;
+	 font-size: 18px;
+	 font-weight: 400;
+	 line-height: 1.2;
+	 padding-bottom: 10px;
+}
+ .contact-form .first-container .info-container div:first-of-type p {
+	 max-width: 260px;
+	 color: #999;
+}
+ .contact-form .first-container .info-container div p {
+	 font-size: 16px;
+	 line-height: 1.6;
+	 color: #00ad5f;
+}
+ .contact-form .second-container {
+	 padding: 30px;
+   background: #fff;
+  border-radius: 20px;
+}
+ .contact-form .second-container h2 {
+	 font-size: 30px;
+   
+	 font-weight: 400;
+	 color: #333;
+	 line-height: 1.2;
+	 text-align: center;
+	 margin-bottom: 20px;
+}
+ .contact-form .second-container form {
+	 display: flex;
+	 flex-direction: column;
+}
+ .contact-form .second-container form .form-group {
+	 margin-bottom: 10px;
+}
+ .contact-form .second-container form .form-group * {
+	 min-height: 45px;
+	 /* border: 1px solid #e6e6e6; */
+	 padding: 0 20px;
+}
+ .contact-form .second-container form .form-group label {
+	 display: flex;
+	 align-items: center;
+	 width: 100%;
+	 font-size: 16px;
+	 color: #333;
+	 text-transform: uppercase;
+	 margin-top: -1px;
+}
+ .contact-form .second-container form .form-group:first-of-type input {
+	 width: 50.1%;
+	 margin-right: -5px;
+  
+}
+ .contact-form .second-container form .form-group input {
+	 width: 100%;
+   /* border: 1px solid #e6e6e6; */
+   background-color: rgba(87, 87, 87, 0.2);
+	 font-size: 15px;
+	 margin-top: -2px;
+}
+.form-group input:focus{
+  outline : none;
+  border: none;
+}
+ .contact-form .second-container form .form-group input::placeholder, .contact-form .second-container form .form-group textarea::placeholder {
+	 color: #999;
+}
+ .contact-form .second-container form .form-group textarea {
+	 width: 100%;
+	 min-height: 80px;
+	 resize: none;
+	 padding: 10px 20px;
+	 margin-top: -1px;
+}
+ .contact-form .second-container form button {
+	 position: relative;
+	 left: calc(50% - 100px);
+	 cursor: pointer;
+}
+
+
+ @media screen and (max-width: 800px) {
+	 .contact-form {
+		 width: 90vw;
+	}
+}
+ @media screen and (max-width: 700px) {
+	 .contact-form {
+		 flex-direction: column-reverse;
+	}
+	 .contact-form > * {
+		 width: 100%;
+	}
+	 .contact-form .first-container {
+		 padding: 40px 0;
+	}
+}
+ 
 
 
 
@@ -918,14 +1072,22 @@ textarea.contact-input {
   .elem-2 {
     bottom: 30px;
     right: -80px;
+    position: absolute;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    background-color: var(--white);
+    border-radius: var(--radius-10);
+    padding: 20px;
+    animation-name: floatingEffectElem2;
+    animation-duration: 3s;
+    animation-timing-function:ease-in-out;
+    animation-iteration-count: infinite;
   }
 
   .elem-2 .elem-title {
      color: var(--fiery-rose); 
-     animation-name: floatingEffectElem2;
-    animation-duration: 3s;
-    animation-timing-function:ease-in-out;
-    animation-iteration-count: infinite;
+    
   
   }
 
@@ -944,18 +1106,21 @@ textarea.contact-input {
   .elem-3 {
     top: -40px;
     right: -30px;
+  }
+  /* .elem{
     animation-name: floatingEffectElem3;
     animation-duration: 3s;
     animation-timing-function:ease-in-out;
     animation-iteration-count: infinite;
-  }
+    
+  } */
 
   .elem-3 ion-icon {
     color: var(--minion-yellow);
     font-size: 6rem;
   }
 
-  .elem {
+  .elem-n {
     position: absolute;
     display: flex;
     align-items: center;
@@ -963,7 +1128,7 @@ textarea.contact-input {
     background-color: var(--white);
     border-radius: var(--radius-10);
     padding: 20px;
-    animation-name: floatingEffect;
+    animation-name: floatingEffectElem3;
     animation-duration: 3s;
     animation-timing-function:ease-in-out;
     animation-iteration-count: infinite;
