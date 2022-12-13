@@ -1,44 +1,121 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-  <meta charset="UTF-8" />
-  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Dashboard</title>
-  <!-- 
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dashboard</title>
+    <!-- 
     - favicon
   -->
-  <link rel="shortcut icon" href="./favicon.svg" type="image/svg+xml" />
-  <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
-  <!-- 
+    <link rel="shortcut icon" href="./favicon.svg" type="image/svg+xml" />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/icon?family=Material+Icons"
+    />
+    <!-- 
     - custom css link
   -->
-  <link rel="stylesheet" href="css/style.css" />
-  <link rel="stylesheet" href="css/dashboard.css" />
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/footer.css" />
+    <link rel="stylesheet" href="css/dashboard.css" />
 
-  <!-- 
+    <!-- 
     - google font link
   -->
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link
-    href="https://fonts.googleapis.com/css2?family=Barlow:wght@600;700&family=Open+Sans:wght@400;500;700&family=Poppins:wght@400;600&display=swap"
-    rel="stylesheet" />
-</head>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Barlow:wght@600;700&family=Open+Sans:wght@400;500;700&family=Poppins:wght@400;600&display=swap"
+      rel="stylesheet"
+    />
+  </head>
 
-<body id="top">
-    <%- include("components/dashboard_content_screen.ejs", {id : 1}); %>
-        <%- include("components/footer.ejs"); %>
+  <body id="top">
+    <div class="dashboard">
+      <div class="navigation">
+        <div class="ingeniousLogo">
+          <a href="index">
+            <span class="material-icons iconB"
+              ><span class="material-symbols-rounded"> arrow_back </span></span
+            ></a
+          >RTS
+        </div>
+        <ul class="dashboardNavigation">
+          <li class="active">
+            <a href="#profile"
+              ><span class="material-icons">person</span> <span>Profile</span>
+            </a>
+          </li>
+          <li>
+            <a href="#submissions"
+              ><span class="material-icons">task_alt</span>
+              <span>Submissions</span>
+            </a>
+          </li>
+          <li>
+            <a href="#resources">
+              <span class="material-icons"
+                ><span class="material-symbols-rounded">
+                  download_for_offline
+                </span></span
+              >
+              <span>Resources</span>
+            </a>
+          </li>
+          <li class="backButton">
+            <a href="index">
+              <span class="material-icons iconB"
+                ><span class="material-symbols-rounded">
+                  arrow_back
+                </span></span
+              >
+              <span>Back</span>
+            </a>
+          </li>
+        </ul>
 
-          <a href="#top" class="back-to-top" data-back-to-top>BACK TOP</a>
+        <div class="askDoubt">
+          <span class="material-icons"> contact_support</span>
+          Ask a doubt
+        </div>
+      </div>
 
-          <script src="js/script.js"></script>
-          <script src="js/dashboard.js"></script>
+      <div class="dashboard-content-container">
+        <div class="d-c-content" id="profile">
+          <!-- <div class="dashboardContent"> -->
+          <!-- <h1>xdcfvghjmk,</h1> -->
+          <%- include("dashboard/profile.ejs");%>
+          <!-- </div> -->
+        </div>
+        <div class="d-c-content" id="submissions">
+          <!-- <div class="dashboardContent"> -->
+          <%- include("dashboard/submissions.ejs");%>
+          <!-- # -->
+          <!-- <h1>poiuytrdfgh</h1> -->
+          <!-- </div> -->
+        </div>
+        <div class="d-c-content" id="resources">
+          <!-- <div class="dashboardContent"> -->
+          <!-- # -->
+          <!-- <h1>tghjjmkijjj</h1> -->
+          <%- include("dashboard/resources.ejs");%>
+          <!-- </div> -->
+        </div>
+      </div>
+    </div>
 
-          <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
-          <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+    <%- include("components/footer.ejs"); %>
 
-</body>
+    <a href="#top" class="back-to-top" data-back-to-top>BACK TOP</a>
 
+    <script
+      type="module"
+      src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"
+    ></script>
+    <script
+      nomodule
+      src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"
+    ></script>
+  </body>
 </html>
