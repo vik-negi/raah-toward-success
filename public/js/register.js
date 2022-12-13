@@ -1,3 +1,5 @@
+
+
 var $loginMsg = document.querySelector(".loginMsg"),
   $login = document.querySelector(".login"),
   $signupMsg = document.querySelector(".signupMsg"),
@@ -91,6 +93,8 @@ const userSignUp = async () => {
   }, 3000);
 };
 
+
+
 const userSignIn = async () => {
   console.log("userSignIn");
   var data = {};
@@ -124,7 +128,7 @@ const userSignIn = async () => {
 
       if (res.data.status === "success") {
         error.innerHTML = res.data.message;
-        // await axios.get("/");
+        
       } else {
         error.innerHTML = res.data.message;
       }
