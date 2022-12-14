@@ -1,5 +1,3 @@
-
-
 var $loginMsg = document.querySelector(".loginMsg"),
   $login = document.querySelector(".login"),
   $signupMsg = document.querySelector(".signupMsg"),
@@ -93,8 +91,6 @@ const userSignUp = async () => {
   }, 3000);
 };
 
-
-
 const userSignIn = async () => {
   console.log("userSignIn");
   var data = {};
@@ -119,16 +115,15 @@ const userSignIn = async () => {
       console.log(res.data.data);
       if (typeof Storage !== "undefined") {
         // Code for localStorage/sessionStorage.
-        localStorage.setItem("user", res.data.data);
+        window.localStorage.setItem("user", JSON.stringify(res.data.data));
         console.log("aaaaaaaaaaaaaaa");
-        console.log(localStorage.getItem("user"));
+        console.log(window.localStorage.getItem("user"));
       } else {
         // Sorry! No Web Storage support..
       }
 
       if (res.data.status === "success") {
         error.innerHTML = res.data.message;
-        
       } else {
         error.innerHTML = res.data.message;
       }

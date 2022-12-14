@@ -765,7 +765,10 @@ textarea.contact-input {
   gap: 40px;
 }
 
-.blog-card { font-family: var(--ff-barlow); }
+.blog-card { 
+  font-family: var(--ff-barlow);
+  max-width: 400px;
+  margin: 0 auto;}
 
 .blog-card .card-banner {
   background-color: var(--independence);
