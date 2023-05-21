@@ -9,10 +9,9 @@ import dotenv from "dotenv";
 import { multerUploads } from "./utils/multer.js";
 import PostController from "./controllers/postController.js";
 import doubtRouter from "./routes/doubts.js";
+import chatController from "./controllers/chatController.js";
 
 import cookieParser from "cookie-parser";
-// import { isUserAuth } from "./middleware/auth-middleware.js";
-import Auth from "./middleware/auth-middleware.js";
 // import SocketIO from "./app.js";
 
 process.env.NODE_TLS_REJECT_UNAUTHORIZED = "0";
@@ -44,13 +43,13 @@ app.set("view engine", "ejs");
 
 let cpUpload = multerUploads.fields([{ name: "image", maxCount: 1 }]);
 
-
 // socket io
-import { Server } from 'socket.io';
+import { Server } from "socket.io";
 
-import { createServer } from 'http';
+const httpServer = app.listen(port, "0.0.0.0", () => {
+  console.log(`server is running at http://localhost:${port}`);
+});
 
-const httpServer = createServer(app);
 var io = new Server(httpServer, {
   cors: {
     origin: "*",
@@ -72,7 +71,7 @@ io.on("connection", (socket) => {
     client.set(id, socket);
   });
   socket.on("message", async (message) => {
-    var returnData = await ChatController.createMessage(message);
+    var returnData = await chatController.createMessage(message);
 
     await socket.emit("message", returnData);
 
@@ -80,12 +79,11 @@ io.on("connection", (socket) => {
   });
   socket.on("disconnect", () => {
     console.log("user disconnected");
-    if (socket.user.id) {
+    if (socket.user) {
       client.delete(socket.user.id);
     }
   });
 });
-
 
 app.use("/user/create-post", cpUpload, PostController.createPost);
 app.use("/account/auth", accountRoutes);
@@ -96,7 +94,3 @@ app.use("/doubt", doubtRouter);
 // app.use("*", (req, res) => {
 //   res.send(404).json({ message: "Not a valid Route" });
 // });
-
-app.listen(port, "0.0.0.0", () => {
-  console.log(`server is running at http://localhost:${port}`);
-});

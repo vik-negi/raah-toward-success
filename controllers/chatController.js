@@ -40,7 +40,7 @@ class ChatController {
       console.log("data of create message : ", data);
 
       if (!message) {
-        return res.json({
+        return json({
           status: "failed",
           message: "Please provide all the fields",
         });
@@ -53,16 +53,27 @@ class ChatController {
         text: message,
         image: [],
         replies: [],
-        likes: []
+        likes: [],
       });
+      await comment.save();
+
       var commLast = await Comment.findOne({
         userId: userId,
-        $orderby: { $natural: -1 }
-      })
-      await comment.save();
+      }).sort({ $natural: -1 });
+
+      var commLastWithUsername = Object.assign({}, commLast.toObject(), {
+        username: user.username,
+        userImage: user.profileImage,
+        name: user.name,
+        userId: user._id,
+      });
+
+      console.log("user : ", user);
+      console.log("commLast : ", commLastWithUsername);
+
       return {
         status: "success",
-        data: commLast,
+        data: commLastWithUsername,
         message: "Message sent",
       };
     } catch (err) {
@@ -74,47 +85,46 @@ class ChatController {
     }
   };
 
+  // static createMessage = async (req, res) => {
+  //   try {
+  //     console.log("req.body", req.body);
+  //     const { receiverUserId, senderUserId } = req.params;
+  //     const { message, messageType } = req.body;
 
-  static createMessage = async (req, res) => {
-    try {
-      console.log("req.body", req.body);
-      const { receiverUserId, senderUserId } = req.params;
-      const { message, messageType } = req.body;
+  //     if (!message) {
+  //       return res.status(400).json({
+  //         status: "failed",
+  //         message: "Please provide all the fields",
+  //       });
+  //     }
+  //     const recieverUser = await UserModel.findById(receiverUserId);
+  //     const recieveBy = recieverUser.username;
 
-      if (!message) {
-        return res.status(400).json({
-          status: "failed",
-          message: "Please provide all the fields",
-        });
-      }
-      const recieverUser = await UserModel.findById(receiverUserId);
-      const recieveBy = recieverUser.username;
+  //     const newMessage = new ChatModel({
+  //       receiverUserId: receiverUserId,
+  //       senderUserId: senderUserId,
+  //       message: message,
+  //       sendBy: req.user.username,
+  //       recieveBy: recieveBy,
+  //     });
+  //     if (messageType) {
+  //       newMessage.messageType = messageType;
+  //     }
+  //     const msg = await newMessage.save();
 
-      const newMessage = new ChatModel({
-        receiverUserId: receiverUserId,
-        senderUserId: senderUserId,
-        message: message,
-        sendBy: req.user.username,
-        recieveBy: recieveBy,
-      });
-      if (messageType) {
-        newMessage.messageType = messageType;
-      }
-      const msg = await newMessage.save();
-
-      res.status(200).json({
-        status: "success",
-        data: msg,
-        message: "Message sent",
-      });
-    } catch (err) {
-      console.log("err", err);
-      res.status(500).json({
-        status: "failed",
-        message: err.message,
-      });
-    }
-  };
+  //     res.status(200).json({
+  //       status: "success",
+  //       data: msg,
+  //       message: "Message sent",
+  //     });
+  //   } catch (err) {
+  //     console.log("err", err);
+  //     res.status(500).json({
+  //       status: "failed",
+  //       message: err.message,
+  //     });
+  //   }
+  // };
 
   static getAllUser = async (req, res) => {
     try {
