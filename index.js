@@ -63,7 +63,7 @@ io.on("connection", (socket) => {
     socket.join(room);
   });
   socket.on("signin", (id) => {
-    console.log(socket.id, "has signin");
+    // console.log(socket.id, "has signin");
     console.log(id, "id has signin");
     socket.user = {
       id: id,

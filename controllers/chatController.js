@@ -37,7 +37,7 @@ class ChatController {
   static createMessage = async (data) => {
     try {
       const { userId, message, messageType } = data;
-      console.log("data of create message : ", data);
+      // console.log("data of create message : ", data);
 
       if (!message) {
         return json({
@@ -68,8 +68,8 @@ class ChatController {
         userId: user._id,
       });
 
-      console.log("user : ", user);
-      console.log("commLast : ", commLastWithUsername);
+      // console.log("user : ", user);
+      // console.log("commLast : ", commLastWithUsername);
 
       return {
         status: "success",

@@ -134,7 +134,7 @@ class PostController {
           username: user.username,
         });
       }
-      console.log("send comment : ", commentUserData);
+      // console.log("send comment : ", commentUserData);
       res.status(200).json({
         data: commentUserData,
         status: "success",
