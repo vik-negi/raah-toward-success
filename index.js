@@ -8,12 +8,14 @@ import postRouter from "./routes/postRoutes.js";
 import dotenv from "dotenv";
 import { multerUploads } from "./utils/multer.js";
 import PostController from "./controllers/postController.js";
-import chatRouter from "./routes/chatRoutes.js";
-import testRouter from "./routes/test.js";
+import doubtRouter from "./routes/doubts.js";
+
 import cookieParser from "cookie-parser";
 // import { isUserAuth } from "./middleware/auth-middleware.js";
 import Auth from "./middleware/auth-middleware.js";
 // import SocketIO from "./app.js";
+
+process.env.NODE_TLS_REJECT_UNAUTHORIZED = "0";
 const app = express();
 
 dotenv.config();
@@ -26,7 +28,7 @@ connectDB(USERNAME, PASSWORD);
 app.use(cors());
 // JSON
 // app.use(express.json());
-const port = process.env.PORT || 8000;
+const port = process.env.PORT || 5000;
 
 // body-parser
 app.use(bodyParser.urlencoded({ extended: true }));
@@ -42,37 +44,59 @@ app.set("view engine", "ejs");
 
 let cpUpload = multerUploads.fields([{ name: "image", maxCount: 1 }]);
 
-// app.get("/home", (req, res) => {
-//   return res.render("index");
-// });
-app.get("/signup", (req, res) => {
-  return res.render("signup");
+
+// socket io
+import { Server } from 'socket.io';
+
+import { createServer } from 'http';
+
+const httpServer = createServer(app);
+var io = new Server(httpServer, {
+  cors: {
+    origin: "*",
+  },
+});
+const client = new Map();
+io.on("connection", (socket) => {
+  console.log("a user connected");
+  socket.on("join", (room) => {
+    console.log("joined room", room);
+    socket.join(room);
+  });
+  socket.on("signin", (id) => {
+    console.log(socket.id, "has signin");
+    console.log(id, "id has signin");
+    socket.user = {
+      id: id,
+    };
+    client.set(id, socket);
+  });
+  socket.on("message", async (message) => {
+    var returnData = await ChatController.createMessage(message);
+
+    await socket.emit("message", returnData);
+
+    // io.to(message.room).emit("message", message);
+  });
+  socket.on("disconnect", () => {
+    console.log("user disconnected");
+    if (socket.user.id) {
+      client.delete(socket.user.id);
+    }
+  });
 });
 
-app.get("/dashboard", (req, res) => {
-  // if (id == 1) {
-  return res.render("dashboard");
-  // } else if (id == 2) {
-  //   return res.render("dashboard/dashboard_submission");
-  // } else {
-  //   return res.render("dashboard/dashboard_resources");
-  // }
-});
 
-app.get("/dashboard", (req, res) => {
-  return res.render("dashboard");
-});
-
-app.use("/dashboard", Auth.checkUserAuth);
 app.use("/user/create-post", cpUpload, PostController.createPost);
-app.use("/account", accountRoutes);
+app.use("/account/auth", accountRoutes);
 app.use("/user", postRouter);
 
-app.use("/api/user/chat", chatRouter);
+app.use("/doubt", doubtRouter);
 
-app.use("/test", testRouter);
-app.use("/", Auth.isUserAuth);
+// app.use("*", (req, res) => {
+//   res.send(404).json({ message: "Not a valid Route" });
+// });
 
-app.listen(8000, "0.0.0.0", () => {
+app.listen(port, "0.0.0.0", () => {
   console.log(`server is running at http://localhost:${port}`);
 });

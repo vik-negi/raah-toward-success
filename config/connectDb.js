@@ -13,7 +13,7 @@ const connectDB = async (USERNAME, PASSWORD) => {
     const DB_OPTIONS = {
       useUnifiedTopology: true,
       useNewUrlParser: true,
-      DbName: "raah-towards-success",
+      DbName: "rts",
     };
     await mongoose.connect(url, DB_OPTIONS);
     console.log("Database connected successfully");

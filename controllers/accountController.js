@@ -55,7 +55,7 @@ class AccountController {
             password: hashedPassword,
             name: name,
             rollNo: rollNo,
-            email: email,
+            email: email.toLowerCase(),
             accountType: "learner",
             profileCreatedAt: Date.now(),
           });
@@ -100,8 +100,10 @@ class AccountController {
           );
         } else {
           console.log("user email found");
-          user = await UserModel.findOne({ email: email })
-          .select("+password");
+
+
+          user = await UserModel.findOne({ email: email.toLowerCase() })
+            .select("+password");
         }
         if (user) {
           // console.log("password if user : ", user.password);
@@ -113,7 +115,7 @@ class AccountController {
             const id = user._id;
             console.log("id", id);
             const token = jwt.sign({ _id: id }, process.env.
-            JWT_SECRET_KEY, {
+              JWT_SECRET_KEY, {
               expiresIn: 604800,
             });
 
@@ -146,6 +148,7 @@ class AccountController {
           });
         }
       } catch (err) {
+
         res.status(400).json({
           status: "failed",
           message: err.message,

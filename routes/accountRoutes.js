@@ -1,12 +1,12 @@
 import express from "express";
 import AccountController from "../controllers/accountController.js";
-import Auth from "../middleware/auth-middleware.js";
+import checkUserAuth from "../middleware/auth-middleware.js";
 
 const accountRouter = express.Router();
 
 // ROute Level Middleware - To Protect Route
-accountRouter.use("/changepassword", Auth.checkUserAuth);
-accountRouter.use("/loggedUserData", Auth.checkUserAuth);
+accountRouter.use("/changepassword", checkUserAuth);
+accountRouter.use("/loggedUserData", checkUserAuth);
 
 accountRouter.post("/signup", AccountController.signup);
 
@@ -14,7 +14,7 @@ accountRouter.post("/signin", AccountController.sigin);
 accountRouter.post("/update-profile", AccountController.updates);
 accountRouter.get(
   "/likedposts",
-  Auth.checkUserAuth,
+  checkUserAuth,
   AccountController.likedPosts
 );
 

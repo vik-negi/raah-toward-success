@@ -62,7 +62,9 @@ const commentsSchema = mongoose.Schema({
       ref: "user",
     },
   ],
-});
+},
+  { Timestamp: true }
+);
 
 const Comment = mongoose.model("comment", commentsSchema);
 export default Comment;

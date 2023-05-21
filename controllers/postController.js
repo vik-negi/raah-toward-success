@@ -2,6 +2,7 @@ import { ObjectId } from "mongodb";
 import PostModel from "../models/postSchema.js";
 import UserModel from "../models/userSchema.js";
 import { cloudinaryConfig } from "../utils/cloudinary.js";
+import Comment from "../models/commentSchema.js";
 
 class PostController {
   static createPost = async (req, res) => {
@@ -111,20 +112,14 @@ class PostController {
       res.status(500).json({ status: "failed", message: err.message });
     }
   };
-  static getComments = async (req, res) => {
+
+  static getDoubts = async (req, res) => {
     try {
-      const { postId } = req.params;
-      console.log("post Id : ", postId);
-      var post = await PostModel.findById(postId);
-      // console.log("post", post);
-      var comment = post.comments;
-      // console.log("comment", comment);
+      var comment = await Comment.find();
       var commentUserData = [];
 
       for (let i = 0; i < comment.length; i++) {
         var user = await UserModel.findById(comment[i].user);
-
-        console.log("oooooooooooooooooo");
         commentUserData.push({
           _id: comment[i]._id,
           userId: user._id,
@@ -143,7 +138,7 @@ class PostController {
       res.status(200).json({
         data: commentUserData,
         status: "success",
-        message: "All posts fetched successfully",
+        message: "All comments fetched successfully",
       });
     } catch (err) {
       console.log("err : ", err);

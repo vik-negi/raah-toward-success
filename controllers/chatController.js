@@ -1,5 +1,6 @@
 import UserModel from "../models/userSchema.js";
 import ChatModel from "../models/chatSchema.js";
+import Comment from "../models/commentSchema.js";
 
 class ChatController {
   static getUserChat = async (req, res) => {
@@ -32,6 +33,47 @@ class ChatController {
       res.status(500).json({ message: err.message });
     }
   };
+
+  static createMessage = async (data) => {
+    try {
+      const { userId, message, messageType } = data;
+      console.log("data of create message : ", data);
+
+      if (!message) {
+        return res.json({
+          status: "failed",
+          message: "Please provide all the fields",
+        });
+      }
+      const user = await UserModel.findById(userId);
+      var comment = new Comment({
+        user: userId,
+        timestamp: Date.now(),
+        isEdited: false,
+        text: message,
+        image: [],
+        replies: [],
+        likes: []
+      });
+      var commLast = await Comment.findOne({
+        userId: userId,
+        $orderby: { $natural: -1 }
+      })
+      await comment.save();
+      return {
+        status: "success",
+        data: commLast,
+        message: "Message sent",
+      };
+    } catch (err) {
+      console.log("err", err);
+      return {
+        status: "failed",
+        message: err.message,
+      };
+    }
+  };
+
 
   static createMessage = async (req, res) => {
     try {
