@@ -2,6 +2,7 @@ import express from "express";
 import connectDB from "./config/connectDb.js";
 import bodyParser from "body-parser";
 import accountRoutes from "./routes/accountRoutes.js";
+import resourceRouter from './routes/resources.js';
 import cors from "cors";
 import postRouter from "./routes/postRoutes.js";
 // import { DATABASE_URL, PORT } from "./constants.js";
@@ -20,8 +21,9 @@ const app = express();
 dotenv.config();
 
 // Database connec
-var USERNAME = process.env.USERNAME;
+var USERNAME = process.env.MONGODBUSERNAME;
 var PASSWORD = process.env.PASSWORD;
+
 connectDB(USERNAME, PASSWORD);
 
 app.use(cors());
@@ -89,9 +91,12 @@ app.listen(port, "0.0.0.0", () => {
 app.use("/user/create-post", cpUpload, PostController.createPost);
 app.use("/account/auth", accountRoutes);
 app.use("/user", postRouter);
+app.use("/resource", resourceRouter);
 
 app.use("/doubt", doubtRouter);
 
-// app.use("*", (req, res) => {
-//   res.send(404).json({ message: "Not a valid Route" });
-// });
+app.use("/", (req, res) => {
+  return res.status(200).json({
+    "status": "success",
+  })
+});

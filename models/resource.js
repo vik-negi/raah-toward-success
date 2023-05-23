@@ -15,7 +15,6 @@ const resourceSchema = mongoose.Schema(
     },
     link: {
       type: String,
-      required: true,
       trim: true,
     },
     category: {
@@ -65,3 +64,5 @@ const resourceSchema = mongoose.Schema(
 );
 
 const Resource = mongoose.model("resource", resourceSchema);
+
+export default Resource;

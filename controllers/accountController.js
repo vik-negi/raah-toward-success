@@ -162,58 +162,42 @@ class AccountController {
   };
 
   static updates = async (req, res) => {
-    const { name, id, age, username, gender, location } = req.body;
-    const user = await UserModel.findOne({ id: id });
+    const { name, username, email, bio, mobile } = req.body;
+    console.log(req.body);
+    const user = await UserModel.findById(req.user._id);
     if (user) {
       try {
-        if (
-          user.name == name &&
-          user.age == age &&
-          user.username == username &&
-          gender == user.gender &&
-          location == user.location
-        ) {
-          res
-            .status(400)
-            .json({ status: "failed", message: "No changes found" });
-        }
         if (name) {
           user.name = name;
         }
-        if (age) {
-          user.age = age;
+        if (email) {
+          user.email = email;
         }
-        if (gender) {
-          user.gender = gender;
+        if (mobile) {
+          user.mobile = mobile;
         }
-        if (location) {
-          user.location = location;
+        if (bio) {
+          user.bio = bio;
         }
         if (username) {
           const existingUser = await UserModel.findOne({
             username: username,
           });
           if (existingUser) {
-            res
+            return res
               .status(400)
               .json({ status: "failed", message: "Username already exists" });
           }
           user.username = username;
         }
-        user.save((err, user) => {
-          if (err) {
-            res.status(400).json({
-              status: "failed",
-              message: `Error occured while updating profile: ${err}`,
-            });
-          } else {
-            res.status(200).json({
-              status: "success",
-              data: user,
-              message: "Name updated successfully",
-            });
-          }
+        await user.save();
+        const userr = await UserModel.findById(req.user._id);
+        console.log(userr);
+        return res.status(200).json({
+          status: "success",
+          message: "updated successfully",
         });
+
       } catch (err) {
         res.status(400).json({
           status: "failed",
@@ -227,6 +211,72 @@ class AccountController {
       });
     }
   };
+
+  static addSkillAndSocialMedia = async (req, res) => {
+    const { type, skill, socialMediaName, socialMediaLink } = req.body;
+    var user = await UserModel.findById(req.user._id);
+    try {
+      if (type == "skill") {
+        user.skills.push(skill);
+      } else {
+        user.socialMedia.push({
+          name: socialMediaName,
+          link: socialMediaLink,
+        })
+      }
+      console.log(user);
+      await user.save();
+      var socm = await UserModel.findOne(
+        { _id: req.user._id },
+        { socialMedia: { $slice: -1 } }
+      );
+      console.log(socm.socialMedia[0]);
+      return res.status(200).json({
+        status: "success",
+        data: socm.socialMedia[0],
+        message: `${type} added successfully`,
+      })
+    } catch (err) {
+      return res.status(500).json({
+        status: "failed",
+        message: err.message,
+      });
+    }
+  }
+  static removeSkillAndSocialMedia = async (req, res) => {
+    const { type, skill, socialMediaId } = req.body;
+    console.log(req.body);
+    try {
+      if (type == "skill") {
+        await UserModel.updateOne(
+          { _id: req.user._id },
+          {
+            $pull: {
+              skills: skill,
+            },
+          }
+        );
+      } else {
+        await UserModel.updateOne(
+          { _id: req.user._id },
+          {
+            $pull: {
+              socialMedia: { _id: socialMediaId },
+            },
+          }
+        );
+      }
+      return res.status(200).json({
+        status: "success",
+        message: `${type} removed successfully`,
+      })
+    } catch (err) {
+      return res.status(500).json({
+        status: "failed",
+        message: err.message,
+      });
+    }
+  }
 
   static changeUserPassword = async (req, res) => {
     const { password, confirm_pass } = req.body;

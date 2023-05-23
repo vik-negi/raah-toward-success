@@ -2,7 +2,7 @@ import mongoose from "mongoose";
 
 const connectDB = async (USERNAME, PASSWORD) => {
   // const url = `mongodb+srv://${USERNAME}:${PASSWORD}@cluster0.rbf7zih.mongodb.net/?retryWrites=true&w=majority`;
-  const url = `mongodb+srv://incandesncent:YDE6oyV5rGazv7kd@cluster0.rbf7zih.mongodb.net/?retryWrites=true&w=majority`;
+  const url = `mongodb+srv://${USERNAME}:${PASSWORD}@cluster0.rbf7zih.mongodb.net/?retryWrites=true&w=majority`;
   // const url = "mongodb://localhost:27017";
   try {
     const DB_OPTIONS = {

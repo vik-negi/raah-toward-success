@@ -66,5 +66,5 @@ const commentsSchema = mongoose.Schema({
   { Timestamp: true }
 );
 
-const Comment = mongoose.model("comment", commentsSchema);
+const Comment = mongoose.model("doubt", commentsSchema);
 export default Comment;

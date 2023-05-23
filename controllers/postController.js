@@ -118,20 +118,22 @@ class PostController {
       var comment = await Comment.find();
       var commentUserData = [];
 
+      console.log(comment);
       for (let i = 0; i < comment.length; i++) {
-        var user = await UserModel.findById(comment[i].user);
+        var userModel = await UserModel.findById(comment[i].user);
+        console.log(userModel);
         commentUserData.push({
           _id: comment[i]._id,
-          userId: user._id,
+          userId: comment[i].user,
           image: comment[i].image,
           isEdited: comment[i].isEdited,
           text: comment[i].text,
           likes: comment[i].likes,
           createdAt: comment[i].createdAt,
           replies: comment[i].replies,
-          name: user.name,
-          userImage: user.profileImage,
-          username: user.username,
+          name: userModel.name,
+          userImage: userModel.profileImage,
+          username: userModel.username,
         });
       }
       // console.log("send comment : ", commentUserData);

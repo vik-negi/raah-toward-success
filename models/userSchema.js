@@ -10,9 +10,28 @@ const userSchema = mongoose.Schema(
       unique: true,
       maxlength: 16,
     },
-    skills: {
-      type: Array,
+    socialMedia: {
+      type: [
+        {
+          name: {
+            type: String,
+            trim: true,
+          },
+          link: {
+            type: String,
+            trim: true,
+          }
+        }
+      ],
       default: [],
+    },
+    skills: {
+      type: [
+        {
+          type: String,
+        }
+      ],
+      default: []
     },
     rollNo: {
       type: String,
@@ -56,6 +75,11 @@ const userSchema = mongoose.Schema(
       unique: true,
       trim: true,
     },
+    bio: {
+      type: String,
+      default: "This is my bio",
+      trim: true,
+    },
     profileImage: {
       url: {
         type: String,
@@ -83,6 +107,9 @@ const userSchema = mongoose.Schema(
     event: {
       type: Array,
       default: [],
+    },
+    mobile: {
+      type: String,
     },
     likedPosts: [
       {

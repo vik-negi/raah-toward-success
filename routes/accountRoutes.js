@@ -10,7 +10,9 @@ accountRouter.use("/changepassword", checkUserAuth);
 accountRouter.post("/signup", AccountController.signup);
 
 accountRouter.post("/signin", AccountController.sigin);
-accountRouter.post("/update-profile", AccountController.updates);
+accountRouter.post("/add-skill-socialMedia", checkUserAuth, AccountController.addSkillAndSocialMedia);
+accountRouter.post("/remove-skill-socialMedia", checkUserAuth, AccountController.removeSkillAndSocialMedia);
+accountRouter.post("/update-profile", checkUserAuth, AccountController.updates);
 accountRouter.get("/likedposts", checkUserAuth, AccountController.likedPosts);
 
 accountRouter.post(
