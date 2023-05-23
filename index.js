@@ -2,7 +2,7 @@ import express from "express";
 import connectDB from "./config/connectDb.js";
 import bodyParser from "body-parser";
 import accountRoutes from "./routes/accountRoutes.js";
-import resourceRouter from './routes/resources.js';
+import resourceRouter from "./routes/resources.js";
 import cors from "cors";
 import postRouter from "./routes/postRoutes.js";
 // import { DATABASE_URL, PORT } from "./constants.js";
@@ -97,6 +97,6 @@ app.use("/doubt", doubtRouter);
 
 app.use("/", (req, res) => {
   return res.status(200).json({
-    "status": "success",
-  })
+    status: "success",
+  });
 });
