@@ -10,6 +10,10 @@ const userSchema = mongoose.Schema(
       unique: true,
       maxlength: 16,
     },
+    skills: {
+      type: Array,
+      default: [],
+    },
     rollNo: {
       type: String,
       required: true,
@@ -83,7 +87,7 @@ const userSchema = mongoose.Schema(
     likedPosts: [
       {
         type: mongoose.Schema.Types.ObjectId,
-        ref: "post",
+        ref: "resource",
       },
     ],
   },

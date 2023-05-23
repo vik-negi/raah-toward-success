@@ -14,7 +14,7 @@ import chatController from "./controllers/chatController.js";
 import cookieParser from "cookie-parser";
 // import SocketIO from "./app.js";
 
-process.env.NODE_TLS_REJECT_UNAUTHORIZED = "0";
+// process.env.NODE_TLS_REJECT_UNAUTHORIZED = "0";
 const app = express();
 
 dotenv.config();
@@ -44,46 +44,47 @@ app.set("view engine", "ejs");
 let cpUpload = multerUploads.fields([{ name: "image", maxCount: 1 }]);
 
 // socket io
-import { Server } from "socket.io";
+// import { Server } from "socket.io";
 
-const httpServer = app.listen(port, "0.0.0.0", () => {
+// const httpServer =
+app.listen(port, "0.0.0.0", () => {
   console.log(`server is running at http://localhost:${port}`);
 });
 
-var io = new Server(httpServer, {
-  cors: {
-    origin: "*",
-  },
-});
-const client = new Map();
-io.on("connection", (socket) => {
-  console.log("a user connected");
-  socket.on("join", (room) => {
-    console.log("joined room", room);
-    socket.join(room);
-  });
-  socket.on("signin", (id) => {
-    // console.log(socket.id, "has signin");
-    console.log(id, "id has signin");
-    socket.user = {
-      id: id,
-    };
-    client.set(id, socket);
-  });
-  socket.on("message", async (message) => {
-    var returnData = await chatController.createMessage(message);
+// var io = new Server(httpServer, {
+//   cors: {
+//     origin: "*",
+//   },
+// });
+// const client = new Map();
+// io.on("connection", (socket) => {
+//   console.log("a user connected");
+//   socket.on("join", (room) => {
+//     console.log("joined room", room);
+//     socket.join(room);
+//   });
+//   socket.on("signin", (id) => {
+//     // console.log(socket.id, "has signin");
+//     console.log(id, "id has signin");
+//     socket.user = {
+//       id: id,
+//     };
+//     client.set(id, socket);
+//   });
+//   socket.on("message", async (message) => {
+//     var returnData = await chatController.createMessage(message);
 
-    await socket.emit("message", returnData);
+//     await socket.emit("message", returnData);
 
-    // io.to(message.room).emit("message", message);
-  });
-  socket.on("disconnect", () => {
-    console.log("user disconnected");
-    if (socket.user) {
-      client.delete(socket.user.id);
-    }
-  });
-});
+//     // io.to(message.room).emit("message", message);
+//   });
+//   socket.on("disconnect", () => {
+//     console.log("user disconnected");
+//     if (socket.user) {
+//       client.delete(socket.user.id);
+//     }
+//   });
+// });
 
 app.use("/user/create-post", cpUpload, PostController.createPost);
 app.use("/account/auth", accountRoutes);

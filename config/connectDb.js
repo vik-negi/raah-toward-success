@@ -1,19 +1,17 @@
 import mongoose from "mongoose";
 
 const connectDB = async (USERNAME, PASSWORD) => {
-  const url = `mongodb+srv://${USERNAME}:${PASSWORD}@cluster0.jhmqa.mongodb.net/?retryWrites=true&w=majority`;
-  // const url = "mongodb+srv://<username>:<password>@evika.v97axpx.mongodb.net/?retryWrites=true&w=majority"
-
-  // const url = `mongodb+srv://vikramnegi:Kalunegi%4008@cluster0.lmyjm.mongodb.net/evika?retryWrites=true&w=majority`;
+  // const url = `mongodb+srv://${USERNAME}:${PASSWORD}@cluster0.rbf7zih.mongodb.net/?retryWrites=true&w=majority`;
+  const url = `mongodb+srv://incandesncent:YDE6oyV5rGazv7kd@cluster0.rbf7zih.mongodb.net/?retryWrites=true&w=majority`;
   // const url = "mongodb://localhost:27017";
   try {
     const DB_OPTIONS = {
       useUnifiedTopology: true,
       useNewUrlParser: true,
-      DbName: "incandenscent",
+      DbName: "incandescent",
     };
     await mongoose.connect(url, DB_OPTIONS);
-    // console.log("Database connected successfully");
+    console.log("Database connected successfully");
   } catch (e) {
     console.log(e.message);
   }

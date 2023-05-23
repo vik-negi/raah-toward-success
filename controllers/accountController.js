@@ -74,6 +74,7 @@ class AccountController {
           });
         }
       } catch (err) {
+        console.log("err", err);
         return res.status(400).json({
           status: "failed",
           message: err.message,
@@ -101,9 +102,9 @@ class AccountController {
         } else {
           console.log("user email found");
 
-
-          user = await UserModel.findOne({ email: email.toLowerCase() })
-            .select("+password");
+          user = await UserModel.findOne({ email: email.toLowerCase() }).select(
+            "+password"
+          );
         }
         if (user) {
           // console.log("password if user : ", user.password);
@@ -114,8 +115,7 @@ class AccountController {
           if (isvalidPassword) {
             const id = user._id;
             console.log("id", id);
-            const token = jwt.sign({ _id: id }, process.env.
-              JWT_SECRET_KEY, {
+            const token = jwt.sign({ _id: id }, process.env.JWT_SECRET_KEY, {
               expiresIn: 604800,
             });
 
@@ -148,7 +148,6 @@ class AccountController {
           });
         }
       } catch (err) {
-
         res.status(400).json({
           status: "failed",
           message: err.message,
@@ -254,7 +253,10 @@ class AccountController {
   };
 
   static loggedUserData = async (req, res) => {
-    res.send({ user: req.user });
+    res.send({
+      status: "success",
+      data: req.user,
+    });
   };
 
   static sendUserPasswordResetEmail = async (req, res) => {

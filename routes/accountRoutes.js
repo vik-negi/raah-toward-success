@@ -6,17 +6,12 @@ const accountRouter = express.Router();
 
 // ROute Level Middleware - To Protect Route
 accountRouter.use("/changepassword", checkUserAuth);
-accountRouter.use("/loggedUserData", checkUserAuth);
 
 accountRouter.post("/signup", AccountController.signup);
 
 accountRouter.post("/signin", AccountController.sigin);
 accountRouter.post("/update-profile", AccountController.updates);
-accountRouter.get(
-  "/likedposts",
-  checkUserAuth,
-  AccountController.likedPosts
-);
+accountRouter.get("/likedposts", checkUserAuth, AccountController.likedPosts);
 
 accountRouter.post(
   "/sendEmailResetLink",
@@ -31,4 +26,5 @@ accountRouter.post(
 accountRouter.post("/changepassword", AccountController.changeUserPassword);
 accountRouter.get("/loggedUserData", AccountController.loggedUserData);
 
+accountRouter.use("/", checkUserAuth, AccountController.loggedUserData);
 export default accountRouter;
